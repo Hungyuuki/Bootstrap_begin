@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <style>
+      h1,
+      h2,
+      p,
+      div {
+        text-align: center;
+      }
+    </style>
+    <p>Hello world</p>
+    <h1>0</h1>
+    <h2>John Doe</h2>
+    <div class="caculator">
+      <button class="inc">Inc</button>
+      <button class="dec">Dec</button>
+      <button class="change">ChangeName</button>
+    </div>
+    <script>
+      const h1 = document.querySelector("h1");
+      const h2 = document.querySelector("h2");
+      const inc = document.querySelector(".inc");
+      const dec = document.querySelector(".dec");
+      const change = document.querySelector(".change");
+      inc.addEventListener("click", function () {
+        console.log("ok");
+        let num = Number(h1.textContent);
+        num = num + 1;
+        h1.textContent = num;
+      });
+      dec.addEventListener("click", function () {
+        console.log("ok");
+        let num = Number(h1.textContent);
+        num = num - 1;
+        h1.textContent = num;
+      });
+      change.addEventListener("click", function () {
+        console.log("ok");
+        h2.textContent = "Elon Musk";
+      });
+
+      // Demo callback
+      let myCountry = {
+        name: "Hùng",
+        cal: function () {
+          console.log("Nói chuyện");
+          console.log(this.name);
+        },
+      };
+      myCountry.cal();
+      let yourCountry = {
+        name: "Trình",
+        cal: function () {
+          console.log("Nói chuyện");
+        },
+      };
+      function try_me_first(callback) {
+        let a = 15 + 20;
+        callback(a);
+      }
+      try_me_first(function (data) {
+        console.log(data);
+      });
+    </script>
+  </body>
+</html>
